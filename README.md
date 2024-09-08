@@ -12,7 +12,6 @@ Neste estudo, exploraremos uma base de dados da Netflix, contendo informações 
 
 ```
 import pandas as pd
-import numpy as np
 import plotly.express as px
 from textblob import TextBlob
 dff = pd.read_csv('netflixanalysis/netflix_titles.csv')
