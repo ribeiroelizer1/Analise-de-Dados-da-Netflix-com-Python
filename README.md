@@ -1,6 +1,6 @@
-# Analise-de-Dados-da-Netflix-com-Python
+# Analise de Dados da Netflix com Python
 
-Nesse estudo irei analisar uma base de dados da Netflix contendo informações sobre Series e filmes no período de 2010 a 2021 para responder as seguintes perguntas:
+Neste estudo, exploraremos uma base de dados da Netflix, contendo informações sobre séries e filmes de 2010 a 2021. O objetivo é responder a algumas perguntas-chave sobre o conteúdo da plataforma:
 
 1 - Quais os tipos de conteúdos disponíveis?   
 2 - Diretores com maior quantidade de conteúdos publicados  
@@ -21,7 +21,7 @@ dff.shape
 ``` (8807, 12) ```
 
 
-<h6>Visualizando o tipo de conteúdo que mais é distribuído na plataforma</h6>
+<h6>Analisando o Tipo de Conteúdo Mais Distribuído</h6>
 
 ``` 
 z = dff.groupby(['rating']).size().reset_index(name='counts')
@@ -32,9 +32,9 @@ barras.show()
 ![newplot (2)](https://github.com/user-attachments/assets/9198c2ad-e96f-4fc8-95f4-89e00eb70ff4)
 
 
-Aqui, conseguimos ver que no período estudado, o conteúdo com maior distribuição foi o TV-MA, que significa que o conteúdo da netflix é majoritáriamente destinado ao público adulto.
+A análise revela que o conteúdo mais distribuído é o TV-MA, indicando uma predominância de material destinado ao público adulto.
 
-<h6>Conhecendo os Diretores que mais publicaram</h6>
+<h6>Identificando os Diretores com Mais Publicações</h6>
 
 ```
 dff['director']= dff['director'].fillna('No Director Specified') #Trocando os dados vazios da coluna
@@ -52,7 +52,7 @@ fig1.show()
 ```
 ![newplot (3)](https://github.com/user-attachments/assets/15c54979-6b79-41e9-8c57-ca4d621d8ae5)
 
-<h6>Conhecendo os Atores que mais participaram de Séries e Filmes na Netflix</h6>
+<h6>Descobrindo os Atores com Maior Participação</h6>
 
 ```
 dff['cast']=dff['cast'].fillna('No Cast Specified')
@@ -70,7 +70,7 @@ fig2.show()
 ```
 ![newplot (5)](https://github.com/user-attachments/assets/2ded33c8-f535-4d84-9bcd-8580838b1c7b)
 
-Por fim, podemos também ver qual o tipo de conteúdo a Netflix mais publica ao longo dos anos.
+Por fim, podemos também ver qual a tendência de conteúdo ao longo dos anos.
 
 ```
 df1=dff[['type','release_year']]
